@@ -14,6 +14,7 @@ const client = new twilio(accountSid, authToken);
 
 router.post('/new', (req, res, next) => {
     try {
+    console.dir(req.body);
     Laundry.create({
         phonenumber: req.body.phonenumber,
         laundryIp: req.body.laundryIp,
