@@ -23,7 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.Promise = require('bluebird');
 
-mongoose.connect("159.203.108.254:32768");
+mongoose.connect("mongodb://mongo");
 
 app.use('/', index);
 app.use('/laundry', laundry);

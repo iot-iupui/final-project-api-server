@@ -44,7 +44,7 @@ router.post('/new', (req, res, next) => {
             got.post('http://' + laundry.laundryIp + ':5000/laundry', {
                 json: true,
                 body: {
-                    ipaddress: "192.168.11.130",
+                    ipaddress: "159.203.108.254",
                     name: laundry.name,
                     laundryId: laundry._id
                 }
