@@ -8,6 +8,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 var index = require('./routes/index');
+var laundry = require('./routes/laundry');
 
 var app = express();
 
@@ -20,9 +21,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect("mongodb://159.203.108.254:32768");
+mongoose.Promise = require('bluebird');
+
+mongoose.connect("159.203.108.254:32768");
 
 app.use('/', index);
+app.use('/laundry', laundry);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
